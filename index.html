@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff4d8d;--gold:#ffc857;--violet:#8b5cf6;--sky:#38bdf8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;color:#fff;text-align:center;overflow-x:hidden;min-height:100vh;
+background:linear-gradient(135deg,#ff4d8d,#8b5cf6,#38bdf8,#ff4d8d);background-size:400% 400%;animation:bg 18s ease infinite}
+@keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+#cv{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.balloon{position:absolute;bottom:-80px;font-size:42px;animation:rise linear infinite;opacity:.9}
+@keyframes rise{to{transform:translateY(-120vh) rotate(12deg)}}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;animation:tw 2s ease-in-out infinite}
+@keyframes tw{50%{opacity:.1;transform:scale(.5)}}
+main{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 20px 70px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}
+.pre{font-family:"Dancing Script",cursive;font-size:clamp(26px,6vw,38px)}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:900;font-size:clamp(48px,15vw,120px);line-height:1;
+background:linear-gradient(90deg,#fff,var(--gold),#fff);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite;filter:drop-shadow(0 6px 18px rgba(0,0,0,.25))}
+@keyframes shine{to{background-position:200% 0}}
+.age{display:none;width:92px;height:92px;border-radius:50%;align-items:center;justify-content:center;font:900 40px "Playfair Display",serif;
+background:var(--gold);color:#7a2a55;box-shadow:0 0 0 8px rgba(255,255,255,.35),0 10px 30px rgba(0,0,0,.25);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.tag{font-weight:300;font-size:18px;opacity:.95;margin-bottom:10px}
+.btn{font:600 17px Poppins,sans-serif;border:0;cursor:pointer;color:#7a2a55;background:#fff;padding:15px 34px;border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.2s}
+.btn:hover{transform:translateY(-3px) scale(1.05)}
+.scroll{margin-top:30px;font-size:26px;animation:bounce 1.6s infinite;opacity:.8}
+@keyframes bounce{50%{transform:translateY(10px)}}
+.glass{background:rgba(255,255,255,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.35);
+border-radius:28px;padding:34px 26px;margin:34px 0;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.glass h2{font-family:"Playfair Display",Georgia,serif;font-size:30px;margin-bottom:14px}
+.glass p{line-height:1.8;font-weight:300;font-size:18px}
+.sign{font-family:"Dancing Script",cursive;font-size:30px;margin-top:16px;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:20px}
+.flip{perspective:900px;height:150px;cursor:pointer}
+.flip>div{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.flip.on>div{transform:rotateY(180deg)}
+.flip span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px;border-radius:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.front{background:linear-gradient(135deg,#fff3,#fff1);border:1px solid #fff6;font-size:46px}
+.back{background:#fff;color:#7a2a55;transform:rotateY(180deg);font-weight:600;font-size:15px;line-height:1.5}
+.cake{font-size:74px;margin:6px 0}
+.candles{font-size:34px;letter-spacing:8px;min-height:44px;margin-bottom:16px}
+.gift{font-size:80px;cursor:pointer;display:inline-block;animation:shake 2.5s infinite}
+@keyframes shake{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-10deg)}90%{transform:rotate(10deg)}95%{transform:rotate(-6deg)}}
+.reveal{max-height:0;opacity:0;overflow:hidden;transition:all .8s}
+.reveal.on{max-height:400px;opacity:1;margin-top:16px}
+.photos{display:none;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;border:3px solid #fff;transform:rotate(-2deg);transition:.3s}
+.photos img:nth-child(even){transform:rotate(2deg)}
+.photos img:hover{transform:scale(1.06) rotate(0)}
+footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opacity:.9}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="sky"></div>
+
+<main>
+  <section class="hero">
+    <div class="pre">Happy Birthday</div>
+    <h1 id="name">Friend</h1>
+    <div class="age" id="age"></div>
+    <p class="tag">Today is all about you ✨</p>
+    <button class="btn" id="party">Start the party 🎉</button>
+    <div class="scroll">⌄</div>
+  </section>
+
+  <section class="glass">
+    <h2>A note just for you 💌</h2>
+    <p id="msg"></p>
+    <span class="sign" id="from"></span>
+  </section>
+
+  <section class="glass">
+    <h2>Tap to reveal your wishes</h2>
+    <div class="grid" id="wishes"></div>
+  </section>
+
+  <section class="glass" id="photoBox" style="display:none">
+    <h2>Our memories 📸</h2>
+    <div class="photos" id="photos"></div>
+  </section>
+
+  <section class="glass">
+    <h2>Make a wish 🎂</h2>
+    <div class="cake">🎂</div>
+    <div class="candles" id="candles"></div>
+    <button class="btn" id="blow">Blow out the candles</button>
+  </section>
+
+  <section class="glass">
+    <h2>One last surprise</h2>
+    <div class="gift" id="gift">🎁</div>
+    <div class="reveal" id="reveal"><p id="final"></p></div>
+  </section>
+
+  <footer id="foot"></footer>
+</main>
+
+<script>
+/* ============ EDIT THIS PART ============ */
+const CONFIG = {
+  name: "Laiba",
+  from: "Your Friend",
+  age: "",                       // e.g. "21" (leave empty to hide)
+  message: "Thank you for being such a bright, kind and wonderful friend. You make every day better just by being you. I hope this year brings you endless laughter, beautiful surprises and everything your heart wishes for.",
+  wishes: [
+    ["🌈", "May all your dreams come true"],
+    ["😊", "Wishing you endless smiles"],
+    ["💖", "You deserve the very best"],
+    ["🌟", "Here's to your brightest year yet"]
+  ],
+  photos: [],                    // e.g. ["photos/1.jpg", "photos/2.jpg"]
+  finalText: "Your gift is a whole year of happiness, good luck and treats. Happy birthday! 🥳"
+};
+/* ========================================== */
+
+// Optional: change details from the link, e.g.  index.html?name=Sara&from=Ali&age=21
+const q = new URLSearchParams(location.search);
+["name","from","age"].forEach(k => { if (q.get(k)) CONFIG[k] = q.get(k); });
+
+const $ = id => document.getElementById(id);
+document.title = "Happy Birthday " + CONFIG.name + "!";
+$("name").textContent = CONFIG.name;
+$("msg").textContent = CONFIG.message;
+$("from").textContent = "With love, " + CONFIG.from;
+$("final").textContent = CONFIG.finalText;
+$("foot").textContent = "Made with love for " + CONFIG.name + " 💗";
+if (CONFIG.age) { $("age").textContent = CONFIG.age; $("age").style.display = "flex"; }
+
+CONFIG.wishes.forEach(([icon, text]) => {
+  const d = document.createElement("div");
+  d.className = "flip";
+  d.innerHTML = "<div><span class='front'></span><span class='back'></span></div>";
+  d.querySelector(".front").textContent = icon;
+  d.querySelector(".back").textContent = text;
+  d.onclick = e => { d.classList.toggle("on"); burst(e.clientX, e.clientY, 35); };
+  $("wishes").appendChild(d);
+});
+
+if (CONFIG.photos.length) {
+  $("photoBox").style.display = "block";
+  $("photos").style.display = "grid";
+  CONFIG.photos.forEach(src => { const i = document.createElement("img"); i.src = src; i.alt = ""; $("photos").appendChild(i); });
+}
+
+// Background: balloons + twinkling stars
+const sky = $("sky");
+for (let i = 0; i < 14; i++) {
+  const b = document.createElement("div");
+  b.className = "balloon";
+  b.textContent = ["🎈","🎈","💗","✨"][i % 4];
+  b.style.left = Math.random() * 95 + "%";
+  b.style.animationDuration = 10 + Math.random() * 12 + "s";
+  b.style.animationDelay = -Math.random() * 20 + "s";
+  b.style.fontSize = 28 + Math.random() * 30 + "px";
+  sky.appendChild(b);
+}
+for (let i = 0; i < 40; i++) {
+  const s = document.createElement("div");
+  s.className = "star";
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top = Math.random() * 100 + "%";
+  s.style.animationDelay = Math.random() * 2 + "s";
+  sky.appendChild(s);
+}
+
+// Confetti
+const cv = $("cv"), ctx = cv.getContext("2d");
+let P = [], running = false;
+const size = () => { cv.width = innerWidth; cv.height = innerHeight; };
+size(); addEventListener("resize", size);
+const colors = ["#ff4d8d","#ffc857","#8b5cf6","#38bdf8","#34d399","#fff"];
+function burst(x, y, n) {
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, s = 3 + Math.random() * 8;
+    P.push({x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 5, w: 5 + Math.random() * 6, c: colors[i % colors.length], l: 110 + Math.random() * 60, r: Math.random() * 6});
+  }
+  if (!running) { running = true; loop(); }
+}
+function loop() {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  P = P.filter(p => p.l > 0);
+  P.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += .25; p.vx *= .99; p.l--; p.r += .2;
+    ctx.save(); ctx.globalAlpha = Math.min(1, p.l / 40); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+    ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.w / 3, p.w, p.w * .6); ctx.restore();
+  });
+  if (P.length) requestAnimationFrame(loop); else { running = false; ctx.clearRect(0, 0, cv.width, cv.height); }
+}
+const party = () => { for (let i = 0; i < 5; i++) setTimeout(() => burst(Math.random() * cv.width, cv.height * (.15 + Math.random() * .35), 80), i * 220); };
+$("party").onclick = party;
+addEventListener("load", () => setTimeout(party, 600));
+
+// Candles
+let lit = 5;
+const drawC = () => { $("candles").textContent = lit ? "🕯️".repeat(lit) + "💨".repeat(5 - lit) : "💨💨💨💨💨"; };
+drawC();
+$("blow").onclick = function () {
+  if (lit) lit--;
+  drawC();
+  if (!lit) { this.textContent = "Wish granted! ✨"; burst(cv.width / 2, cv.height / 2, 140); }
+};
+
+// Gift
+$("gift").onclick = () => { $("reveal").classList.add("on"); party(); };
+</script>
+</body>
+</html>
