@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--pink:#ff4d8d;--gold:#ffc857;--violet:#8b5cf6;--sky:#38bdf8}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -40,6 +41,8 @@ border-radius:28px;padding:34px 26px;margin:34px 0;box-shadow:0 20px 50px rgba(0
 .glass h2{font-family:"Playfair Display",Georgia,serif;font-size:30px;margin-bottom:14px}
 .glass p{line-height:1.8;font-weight:300;font-size:18px}
 .sign{font-family:"Dancing Script",cursive;font-size:30px;margin-top:16px;display:block}
+.poem{font-family:"Noori Nastaleeq","Noto Nastaliq Urdu",serif;direction:rtl;text-align:center;font-size:clamp(19px,4.8vw,26px);line-height:2.6;padding:6px 4px}
+.poem span{display:block}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:20px}
 .flip{perspective:900px;height:150px;cursor:pointer}
 .flip>div{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
@@ -72,6 +75,10 @@ footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opaci
     <p class="tag">Today is all about you ✨</p>
     <button class="btn" id="party">Start the party 🎉</button>
     <div class="scroll">⌄</div>
+  </section>
+
+  <section class="glass" id="poemBox" style="display:none">
+    <div class="poem" id="poem"></div>
   </section>
 
   <section class="glass">
@@ -112,6 +119,13 @@ const CONFIG = {
   name: "Mahnoor",
   from: "Your Friend",
   age: "",                       // e.g. "21" (leave empty to hide)
+  poem: [                        // Urdu poem, one line per item (leave [] to hide)
+    "آج پھول نہ جانے کیوں کر معمول سے زیادہ تر و تازہ ہیں",
+    "خوشبو میں خمار شامل ہے",
+    "ہمارے آبائی وطن میں سردیوں کی پہلی لہر کھڑکیوں سے چھیڑ خانی کر رہی ہے",
+    "زندگی آمیز خاکے میرے ذہن میں ابھر رہے ہیں",
+    "شاید آج تمہارا جنم دن ہے"
+  ],
   message: "Thank you for being such a bright, kind and wonderful friend. You make every day better just by being you. I hope this year brings you endless laughter, beautiful surprises and everything your heart wishes for.",
   wishes: [
     ["🌈", "May all your dreams come true"],
@@ -136,6 +150,11 @@ $("from").textContent = "With love, " + CONFIG.from;
 $("final").textContent = CONFIG.finalText;
 $("foot").textContent = "Made with love for " + CONFIG.name + " 💗";
 if (CONFIG.age) { $("age").textContent = CONFIG.age; $("age").style.display = "flex"; }
+
+if (CONFIG.poem && CONFIG.poem.length) {
+  $("poemBox").style.display = "block";
+  CONFIG.poem.forEach(line => { const s = document.createElement("span"); s.textContent = line; $("poem").appendChild(s); });
+}
 
 CONFIG.wishes.forEach(([icon, text]) => {
   const d = document.createElement("div");
