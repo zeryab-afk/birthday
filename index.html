@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday!</title>
+<title>سالگرہ مبارک!</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#ff4d8d;--gold:#ffc857;--violet:#8b5cf6;--sky:#38bdf8}
+:root{--gold:#ffc857}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Poppins,system-ui,sans-serif;color:#fff;text-align:center;overflow-x:hidden;min-height:100vh;
+body{font-family:"Noori Nastaleeq","Noto Nastaliq Urdu",serif;line-height:2.2;color:#fff;text-align:center;overflow-x:hidden;min-height:100vh;
 background:linear-gradient(135deg,#ff4d8d,#8b5cf6,#38bdf8,#ff4d8d);background-size:400% 400%;animation:bg 18s ease infinite}
 @keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
 #cv{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
@@ -22,45 +21,45 @@ background:linear-gradient(135deg,#ff4d8d,#8b5cf6,#38bdf8,#ff4d8d);background-si
 .star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;animation:tw 2s ease-in-out infinite}
 @keyframes tw{50%{opacity:.1;transform:scale(.5)}}
 main{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 20px 70px}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}
-.pre{font-family:"Dancing Script",cursive;font-size:clamp(26px,6vw,38px)}
-h1{font-family:"Playfair Display",Georgia,serif;font-weight:900;font-size:clamp(48px,15vw,120px);line-height:1;
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+.pre{font-size:clamp(24px,6vw,34px)}
+h1{font-weight:700;font-size:clamp(46px,13vw,96px);line-height:1.9;padding:.1em .2em .3em;
 background:linear-gradient(90deg,#fff,var(--gold),#fff);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite;filter:drop-shadow(0 6px 18px rgba(0,0,0,.25))}
 @keyframes shine{to{background-position:200% 0}}
-.age{display:none;width:92px;height:92px;border-radius:50%;align-items:center;justify-content:center;font:900 40px "Playfair Display",serif;
+.age{display:none;width:92px;height:92px;border-radius:50%;align-items:center;justify-content:center;font:700 38px sans-serif;
 background:var(--gold);color:#7a2a55;box-shadow:0 0 0 8px rgba(255,255,255,.35),0 10px 30px rgba(0,0,0,.25);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.1)}}
-.tag{font-weight:300;font-size:18px;opacity:.95;margin-bottom:10px}
-.btn{font:600 17px Poppins,sans-serif;border:0;cursor:pointer;color:#7a2a55;background:#fff;padding:15px 34px;border-radius:999px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.2s}
+.tag{font-size:19px;margin-bottom:10px}
+.btn{font-family:inherit;font-weight:700;font-size:18px;border:0;cursor:pointer;color:#7a2a55;background:#fff;padding:12px 34px;border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.2s;line-height:2}
 .btn:hover{transform:translateY(-3px) scale(1.05)}
 .scroll{margin-top:30px;font-size:26px;animation:bounce 1.6s infinite;opacity:.8}
 @keyframes bounce{50%{transform:translateY(10px)}}
 .glass{background:rgba(255,255,255,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.35);
 border-radius:28px;padding:34px 26px;margin:34px 0;box-shadow:0 20px 50px rgba(0,0,0,.18)}
-.glass h2{font-family:"Playfair Display",Georgia,serif;font-size:30px;margin-bottom:14px}
-.glass p{line-height:1.8;font-weight:300;font-size:18px}
-.sign{font-family:"Dancing Script",cursive;font-size:30px;margin-top:16px;display:block}
-.poem{font-family:"Noori Nastaleeq","Noto Nastaliq Urdu",serif;direction:rtl;text-align:center;font-size:clamp(19px,4.8vw,26px);line-height:2.6;padding:6px 4px}
+.glass h2{font-size:clamp(22px,5vw,28px);margin-bottom:14px;line-height:2.2}
+.glass p{line-height:2.4;font-size:clamp(17px,4.2vw,20px)}
+.sign{font-size:24px;margin-top:16px;display:block}
+.poem{font-size:clamp(19px,4.8vw,26px);line-height:2.6;padding:6px 4px}
 .poem span{display:block}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:20px}
-.flip{perspective:900px;height:150px;cursor:pointer}
+.flip{perspective:900px;height:160px;cursor:pointer}
 .flip>div{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
 .flip.on>div{transform:rotateY(180deg)}
 .flip span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px;border-radius:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .front{background:linear-gradient(135deg,#fff3,#fff1);border:1px solid #fff6;font-size:46px}
-.back{background:#fff;color:#7a2a55;transform:rotateY(180deg);font-weight:600;font-size:15px;line-height:1.5}
-.cake{font-size:74px;margin:6px 0}
-.candles{font-size:34px;letter-spacing:8px;min-height:44px;margin-bottom:16px}
-.gift{font-size:80px;cursor:pointer;display:inline-block;animation:shake 2.5s infinite}
+.back{background:#fff;color:#7a2a55;transform:rotateY(180deg);font-weight:700;font-size:17px;line-height:2.1}
+.cake{font-size:74px;margin:6px 0;line-height:1.4}
+.candles{font-size:34px;letter-spacing:8px;min-height:50px;margin-bottom:16px;line-height:1.6}
+.gift{font-size:80px;cursor:pointer;display:inline-block;line-height:1.4;animation:shake 2.5s infinite}
 @keyframes shake{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-10deg)}90%{transform:rotate(10deg)}95%{transform:rotate(-6deg)}}
 .reveal{max-height:0;opacity:0;overflow:hidden;transition:all .8s}
-.reveal.on{max-height:400px;opacity:1;margin-top:16px}
+.reveal.on{max-height:500px;opacity:1;margin-top:16px}
 .photos{display:none;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
 .photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;border:3px solid #fff;transform:rotate(-2deg);transition:.3s}
 .photos img:nth-child(even){transform:rotate(2deg)}
 .photos img:hover{transform:scale(1.06) rotate(0)}
-footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opacity:.9}
+footer{font-size:22px;margin-top:30px;opacity:.9}
 </style>
 </head>
 <body>
@@ -69,11 +68,11 @@ footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opaci
 
 <main>
   <section class="hero">
-    <div class="pre">Happy Birthday</div>
-    <h1 id="name">Friend</h1>
+    <div class="pre" id="tPre"></div>
+    <h1 id="name">دوست</h1>
     <div class="age" id="age"></div>
-    <p class="tag">Today is all about you ✨</p>
-    <button class="btn" id="party">Start the party 🎉</button>
+    <p class="tag" id="tTag"></p>
+    <button class="btn" id="party"></button>
     <div class="scroll">⌄</div>
   </section>
 
@@ -82,30 +81,30 @@ footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opaci
   </section>
 
   <section class="glass">
-    <h2>A note just for you 💌</h2>
+    <h2 id="tNote"></h2>
     <p id="msg"></p>
     <span class="sign" id="from"></span>
   </section>
 
   <section class="glass">
-    <h2>Tap to reveal your wishes</h2>
+    <h2 id="tWishes"></h2>
     <div class="grid" id="wishes"></div>
   </section>
 
   <section class="glass" id="photoBox" style="display:none">
-    <h2>Our memories 📸</h2>
+    <h2 id="tPhotos"></h2>
     <div class="photos" id="photos"></div>
   </section>
 
   <section class="glass">
-    <h2>Make a wish 🎂</h2>
+    <h2 id="tMake"></h2>
     <div class="cake">🎂</div>
     <div class="candles" id="candles"></div>
-    <button class="btn" id="blow">Blow out the candles</button>
+    <button class="btn" id="blow"></button>
   </section>
 
   <section class="glass">
-    <h2>One last surprise</h2>
+    <h2 id="tLast"></h2>
     <div class="gift" id="gift">🎁</div>
     <div class="reveal" id="reveal"><p id="final"></p></div>
   </section>
@@ -116,39 +115,64 @@ footer{font-family:"Dancing Script",cursive;font-size:24px;margin-top:30px;opaci
 <script>
 /* ============ EDIT THIS PART ============ */
 const CONFIG = {
-  name: "Mahnoor",
-  from: "Your Friend",
+  name: "ماہ نور",
+  from: "آپ کی دوست",
   age: "",                       // e.g. "21" (leave empty to hide)
-  poem: [                        // Urdu poem, one line per item (leave [] to hide)
+  poem: [                        // one line per item (leave [] to hide)
     "آج پھول نہ جانے کیوں کر معمول سے زیادہ تر و تازہ ہیں",
     "خوشبو میں خمار شامل ہے",
     "ہمارے آبائی وطن میں سردیوں کی پہلی لہر کھڑکیوں سے چھیڑ خانی کر رہی ہے",
     "زندگی آمیز خاکے میرے ذہن میں ابھر رہے ہیں",
     "شاید آج تمہارا جنم دن ہے"
   ],
-  message: "Thank you for being such a bright, kind and wonderful friend. You make every day better just by being you. I hope this year brings you endless laughter, beautiful surprises and everything your heart wishes for.",
+  message: "ایک روشن، مہربان اور بہترین دوست ہونے کا شکریہ۔ آپ کے ہونے سے ہر دن خوبصورت ہو جاتا ہے۔ دعا ہے کہ یہ سال آپ کے لیے ڈھیروں ہنسی، حسین سرپرائزز اور وہ سب کچھ لائے جو آپ کا دل چاہتا ہے۔",
   wishes: [
-    ["🌈", "May all your dreams come true"],
-    ["😊", "Wishing you endless smiles"],
-    ["💖", "You deserve the very best"],
-    ["🌟", "Here's to your brightest year yet"]
+    ["🌈", "آپ کے سارے خواب پورے ہوں"],
+    ["😊", "آپ کے چہرے پر ہمیشہ مسکراہٹ رہے"],
+    ["💖", "آپ ہر بہترین چیز کی حقدار ہیں"],
+    ["🌟", "یہ سال آپ کی زندگی کا سب سے روشن سال ہو"]
   ],
   photos: [],                    // e.g. ["photos/1.jpg", "photos/2.jpg"]
-  finalText: "Your gift is a whole year of happiness, good luck and treats. Happy birthday! 🥳"
+  finalText: "آپ کا تحفہ ایک پورا سال ہے، خوشیوں، اچھی قسمت اور میٹھی چیزوں سے بھرا ہوا۔ سالگرہ مبارک! 🥳",
+  t: {                           // all headings and buttons
+    pre: "سالگرہ مبارک",
+    tag: "آج کا دن صرف آپ کے نام ✨",
+    party: "جشن شروع کریں 🎉",
+    note: "آپ کے لیے ایک چھوٹا سا پیغام 💌",
+    sign: "ڈھیروں محبت کے ساتھ، ",
+    wishes: "دعائیں دیکھنے کے لیے ٹیپ کریں",
+    photos: "ہماری یادیں 📸",
+    make: "دل میں کوئی خواہش مانگیں 🎂",
+    blow: "موم بتیاں بجھائیں",
+    granted: "خواہش قبول ہو گئی! ✨",
+    last: "ایک آخری سرپرائز",
+    title: "سالگرہ مبارک ",
+    foot: "ڈھیروں محبت کے ساتھ 💗"
+  }
 };
 /* ========================================== */
 
-// Optional: change details from the link, e.g.  index.html?name=Sara&from=Ali&age=21
+// Optional: change details from the link, e.g.  index.html?name=سارہ&from=علی&age=21
 const q = new URLSearchParams(location.search);
 ["name","from","age"].forEach(k => { if (q.get(k)) CONFIG[k] = q.get(k); });
 
 const $ = id => document.getElementById(id);
-document.title = "Happy Birthday " + CONFIG.name + "!";
+const T = CONFIG.t;
+document.title = T.title + CONFIG.name + "!";
+$("tPre").textContent = T.pre;
+$("tTag").textContent = T.tag;
+$("party").textContent = T.party;
+$("tNote").textContent = T.note;
+$("tWishes").textContent = T.wishes;
+$("tPhotos").textContent = T.photos;
+$("tMake").textContent = T.make;
+$("blow").textContent = T.blow;
+$("tLast").textContent = T.last;
 $("name").textContent = CONFIG.name;
 $("msg").textContent = CONFIG.message;
-$("from").textContent = "With love, " + CONFIG.from;
+$("from").textContent = T.sign + CONFIG.from;
 $("final").textContent = CONFIG.finalText;
-$("foot").textContent = "Made with love for " + CONFIG.name + " 💗";
+$("foot").textContent = T.foot;
 if (CONFIG.age) { $("age").textContent = CONFIG.age; $("age").style.display = "flex"; }
 
 if (CONFIG.poem && CONFIG.poem.length) {
@@ -227,7 +251,7 @@ drawC();
 $("blow").onclick = function () {
   if (lit) lit--;
   drawC();
-  if (!lit) { this.textContent = "Wish granted! ✨"; burst(cv.width / 2, cv.height / 2, 140); }
+  if (!lit) { this.textContent = T.granted; burst(cv.width / 2, cv.height / 2, 140); }
 };
 
 // Gift
